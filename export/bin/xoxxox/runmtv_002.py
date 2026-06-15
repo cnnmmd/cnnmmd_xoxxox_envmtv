@@ -1,3 +1,4 @@
+import os
 import sys
 import signal
 import time
@@ -17,7 +18,7 @@ from metamotivo.fb_cpr.huggingface import FBcprModel
 
 flgrun = True
 
-def endprc():
+def endprc(numsig, frmcrr):
   global flgrun
   flgrun = False
 
@@ -143,11 +144,12 @@ with viewer.launch_passive(mmodel, mjdata) as v:
   observation, info = env.reset()
   frmtrw = float(mjdata.time)
 
-  while v.is_running() and flgrun and os.getppid() != 1:
+  while flgrun and v.is_running() and os.getppid() != 1:
     # 調整：描画
     timbgn = time.perf_counter()
     frmbgn = float(mjdata.time)
     #
+
     action = fmodel.act(observation, z, mean=True)
     observation, reward, terminated, truncated, info = env.step(action.cpu().numpy().ravel())
 
