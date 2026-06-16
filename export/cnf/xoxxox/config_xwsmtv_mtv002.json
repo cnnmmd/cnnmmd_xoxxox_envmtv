@@ -1,0 +1,5 @@
+{
+  "usrapp": "usrapp",
+  "envapp": "xoxxox_envmtv",
+  "script": "/env/python/bin/python /opt/common/bin/xoxxox/runmtv_002.py Pelvis 0.1 10.0 40.0 1.0"
+}
