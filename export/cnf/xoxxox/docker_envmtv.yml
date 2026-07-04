@@ -10,7 +10,7 @@ services:
       - ./envdir.txt
     volumes:
       - ../../../export:/opt/common
-      - ../../../strage:/opt/strage
+      - ../../../vol000:/opt/vol000
       - ../../../import/cnnmmd_xoxxox_envmtv/envmtv/hgf:/home/usrapp/.cache/huggingface
       - ../../../import/cnnmmd_xoxxox_envmtv/envmtv/mes:/home/usrapp/.cache/mesa_shader_cache
     deploy:
